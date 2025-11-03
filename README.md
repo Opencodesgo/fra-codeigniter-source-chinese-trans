@@ -1,4 +1,3 @@
-# fra-codeigniter-source-chinese-trans
 
 CodeIgniter 框架中文翻译版
 
@@ -6,5 +5,6 @@ CodeIgniter 框架中文翻译版
 
 框架主要内容包含：
 
-1、基于CodeIgniter 3.1 官方框架包；
-2、未改变官方代码，只是针对源码里的注释进行了翻译。
+1、基于CodeIgniter 3.1.11 官方框架包；<br/>
+2、未改变官方代码，只是针对源码里的注释进行了翻译。<br/>
+3、另外补充了一些复杂代码注释。
