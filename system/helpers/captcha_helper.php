@@ -57,6 +57,7 @@ if ( ! function_exists('create_captcha'))
 {
 	/**
 	 * Create CAPTCHA
+	 * 生成验证码
 	 *
 	 * @param	array	$data		Data for the CAPTCHA
 	 * @param	string	$img_path	Path to create the image in (deprecated)

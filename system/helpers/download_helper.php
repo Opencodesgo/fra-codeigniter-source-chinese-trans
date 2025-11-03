@@ -57,6 +57,7 @@ if ( ! function_exists('force_download'))
 {
 	/**
 	 * Force Download
+	 * 强制下载
 	 *
 	 * Generates headers that force a download to happen
 	 *
@@ -67,12 +68,14 @@ if ( ! function_exists('force_download'))
 	 */
 	function force_download($filename = '', $data = '', $set_mime = FALSE)
 	{
+		// 如果文件及数据都没有，直接返回
 		if ($filename === '' OR $data === '')
 		{
 			return;
 		}
 		elseif ($data === NULL)
 		{
+			// 数据没有，
 			if ( ! @is_file($filename) OR ($filesize = @filesize($filename)) === FALSE)
 			{
 				return;
@@ -137,6 +140,7 @@ if ( ! function_exists('force_download'))
 		}
 
 		// Generate the server headers
+		// 生成服务头
 		header('Content-Type: '.$mime);
 		header('Content-Disposition: attachment; filename="'.$filename.'"');
 		header('Expires: 0');
@@ -151,6 +155,7 @@ if ( ! function_exists('force_download'))
 		}
 
 		// Flush 1MB chunks of data
+		// 按1M分开显示
 		while ( ! feof($fp) && ($data = fread($fp, 1048576)) !== FALSE)
 		{
 			echo $data;

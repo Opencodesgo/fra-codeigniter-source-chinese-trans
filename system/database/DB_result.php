@@ -128,7 +128,6 @@ class CI_DB_result {
 
 	/**
 	 * Number of rows in the result set
-	 * 返回行数
 	 *
 	 * @return	int
 	 */

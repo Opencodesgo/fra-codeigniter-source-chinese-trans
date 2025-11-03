@@ -57,23 +57,26 @@ if ( ! function_exists('now'))
 {
 	/**
 	 * Get "now" time
+	 * 得到当前时间
 	 *
 	 * Returns time() based on the timezone parameter or on the
 	 * "time_reference" setting
+	 * 返回时间根据设置的时区
 	 *
 	 * @param	string
 	 * @return	int
 	 */
 	function now($timezone = NULL)
 	{
+		// 如果时区未传，取配置文件里的时区
 		if (empty($timezone))
 		{
-			$timezone = config_item('time_reference');
+			$timezone = config_item('time_reference');		# 默认为local
 		}
 
 		if ($timezone === 'local' OR $timezone === date_default_timezone_get())
 		{
-			return time();
+			return time();		# 返回当前时间
 		}
 
 		$datetime = new DateTime('now', new DateTimeZone($timezone));
@@ -130,6 +133,7 @@ if ( ! function_exists('standard_date'))
 {
 	/**
 	 * Standard Date
+	 * 标准化日期
 	 *
 	 * Returns a date formatted according to the submitted standard.
 	 *

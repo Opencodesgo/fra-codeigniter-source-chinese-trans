@@ -57,9 +57,11 @@ if ( ! function_exists('set_cookie'))
 {
 	/**
 	 * Set cookie
+	 * 设置COOKIE
 	 *
 	 * Accepts seven parameters, or you can submit an associative
 	 * array in the first parameter containing all the values.
+	 * 接受8个参数，或者也可以在第1个参数里一起提交
 	 *
 	 * @param	mixed
 	 * @param	string	the value of the cookie
@@ -84,6 +86,7 @@ if ( ! function_exists('get_cookie'))
 {
 	/**
 	 * Fetch an item from the COOKIE array
+	 * 从COOKIE数组里获取一条明细
 	 *
 	 * @param	string
 	 * @param	bool
@@ -92,6 +95,7 @@ if ( ! function_exists('get_cookie'))
 	function get_cookie($index, $xss_clean = NULL)
 	{
 		is_bool($xss_clean) OR $xss_clean = (config_item('global_xss_filtering') === TRUE);
+		// 从COOKIE里下标找到值就不需要前缀了
 		$prefix = isset($_COOKIE[$index]) ? '' : config_item('cookie_prefix');
 		return get_instance()->input->cookie($prefix.$index, $xss_clean);
 	}
@@ -103,6 +107,7 @@ if ( ! function_exists('delete_cookie'))
 {
 	/**
 	 * Delete a COOKIE
+	 * 删除COOKIE，设置为空即可
 	 *
 	 * @param	mixed
 	 * @param	string	the cookie domain. Usually: .yourdomain.com

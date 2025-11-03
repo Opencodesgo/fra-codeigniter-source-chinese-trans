@@ -80,7 +80,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<code>application/controllers/Welcome.php</code>
 		
 		<p>This port is 8023, CodeIgniter source chinese trans</p>
-		<code>code down url <a href='https://github.com/rex2017/fra-codeigniter-source-chinese-trans' target='_blank'>github</a></code>
+		<code>url <a href='http://localhost:8023/' target='_blank'>go</a></code>
 
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
